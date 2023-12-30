@@ -17,7 +17,7 @@ app.get('/api/v1/names/:id', (req, res) => {
 
     const product = productNames.find((item) => item.id === productId);
 
-    if (product) {
+    if (product !== undefined) {
         res.status(200).json({
             status: 'success',
             message: 'Product name fetched successfully',
@@ -30,7 +30,7 @@ app.get('/api/v1/names/:id', (req, res) => {
         });
     } else {
         res.status(404).json({
-            status: 'failure',
+            status: 'failed',
             message: 'Not found!'
         });
     }
