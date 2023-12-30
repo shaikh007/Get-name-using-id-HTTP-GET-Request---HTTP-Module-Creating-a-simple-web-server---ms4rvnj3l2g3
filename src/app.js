@@ -30,10 +30,11 @@ app.get('/api/v1/names/:id', (req, res) => {
         });
     } else {
         res.status(404).json({
-            status: 'failed',
+            status: 'failure',
             message: 'Not found!'
         });
     }
+
 });
 
 
